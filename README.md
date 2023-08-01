@@ -1,8 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## MARKETSOL DESCRIPTION 💱
+MarketSOL is a stock prediction Dapp utilizing the Pyth network to deliver real time on chain market data on stocks like Google, Tesla and crypto. Furthermore, users can bet against each other on the price of stocks and win crypto. 
+
+On making a bet, the user can sign a transaction which then sends the money to a third party account which acts as an escrow that will then distribute the prize to the winner of the bet.
+
+Apart from peer to peer betting, users can also speculatively vote on companies that they are bullish on. Durable Nonces is leveraged here to enable voters to vote for a given set of times, and once the time comes for counting, the votes are counted, the count is publicly announced to everyone, and the winner is declared. Instead of signing and sending the transaction when voting for your candidate, the dapp can let the user sign the transaction using durable nonces, serialize the transaction as shown above in the web3.js example, and save the serialized transactions in a database until the time comes for counting.
+For counting the votes, the dapp then needs to sync, send or submit all the signed transactions one by one. With each submitted transaction, the state change will happen on-chain, and the winner can be decided.
 
 ## Getting Started
+First, install the dependencies
 
-First, run the development server:
+```bash
+npm install
+```
+
+run the development server:
  
 ```bash
 npm run dev
